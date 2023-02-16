@@ -7,10 +7,16 @@
   overflow: hidden;
 }
 
+.layout-pane-primary img {
+    height: 16px;
+    display: block;
+    margin: auto;
+}
+
 .splitter-layout .layout-pane {
-  position: relative;
-  flex: 0 0 auto;
-  overflow: auto;
+    position: relative;
+    flex: 0 0 auto;
+    overflow: auto;
 }
 
 .splitter-layout .layout-pane.layout-pane-primary {

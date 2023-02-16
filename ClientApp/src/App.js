@@ -4,7 +4,7 @@ import { Layout } from './components/Layout';
 import { Entities } from './components/Entities';
 
 import './custom.css'
-
+/*
 export default class App extends Component {
   static displayName = App.name;
 
@@ -15,4 +15,15 @@ export default class App extends Component {
       </Layout>
     );
   }
+}
+*/
+
+export default class App extends Component {
+    static displayName = App.name;
+
+    render() {
+        return (
+            <Entities />
+        );
+    }
 }
