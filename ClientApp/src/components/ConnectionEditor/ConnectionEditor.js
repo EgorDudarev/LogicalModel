@@ -23,15 +23,14 @@ class ConnectionEditor extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         const { connection } = this.props;
-        if (connection && prevProps.connection !== connection) {
+        if (prevProps.connection !== connection) {
             this.setState({ connection: connection });
         }
     }
 
     getEditor = () => {
         const { connection } = this.state;
-        console.log(this.state);
-
+        console.log("getEditor");
         switch (connection?.type) {
             case "pgConnection":
                 return (
@@ -46,7 +45,8 @@ class ConnectionEditor extends React.Component {
                 );
 
             default:
-                return <></>;
+                console.log("getEditor null");
+                return <div></div>;
         }
 
         // console.log("ce log: ", connection);

@@ -124,7 +124,7 @@ class LogicalModel extends React.Component {
         const metaData = this.state.selectItem?.metaData;
 
         return (
-            <Splitter percentage={false} firstaryInitialSize={250}>
+            <Splitter percentage={false} firstaryInitialSize={300}>
                 <ReactTreeList
                     data={this.state.treeData}
                     draggable={false}

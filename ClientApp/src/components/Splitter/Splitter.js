@@ -50,7 +50,7 @@ class Splitter extends React.Component {
             } else {
                 const containerRect = this.container.getBoundingClientRect();
                 secondaryPaneSize =
-                    containerRect.width - this.props.firstaryInitialSize;
+                    containerRect.width - (this.props.firstaryInitialSize + DEFAULT_SPLITTER_SIZE);
             }
         } else {
             const containerRect = this.container.getBoundingClientRect();
