@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 
 import "./ConnectionEditor.css";
 import PostgreSqlEditor from "./PostgreSqlEditor/PostgreSqlEditor";
+import InformationBox from "./../Modal/InformationBox/InformationBox";
 
 class ConnectionEditor extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            connection: props.connection
+            connection: props.connection,
+            showBox: false
         };
     }
 
@@ -17,9 +19,16 @@ class ConnectionEditor extends React.Component {
             connection: {
                 ...this.state.connection,
                 ...newConnection
-            }
+            },
+            showBox: true
         });
     };
+
+    onCloseInformationBox = (e) => {
+        this.setState({
+            showBox: false
+        });
+    }
 
     componentDidUpdate(prevProps, prevState) {
         const { connection } = this.props;
@@ -57,9 +66,10 @@ class ConnectionEditor extends React.Component {
             <div className="connectioneditor">
                 <div className="connectioneditor-container">{this.getEditor()}</div>
                 <div className="connectioneditor-buttons">
-                    <button className="connectioneditor-test">Тест соединения</button>
+                    <button className="connectioneditor-test" onClick={this.onChangeConnection}>Тест соединения</button>
                     <button className="connectioneditor-save">Сохранить</button>
                 </div>
+                <InformationBox show={this.state.showBox} onClose={this.onCloseInformationBox} />
             </div>
         );
     }

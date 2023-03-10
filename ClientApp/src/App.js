@@ -9,7 +9,9 @@ export default class App extends Component {
 
     render() {
         return (
-            <Entities />
+            <div className="App">
+                <Entities />
+            </div>
         );
     }
 }
